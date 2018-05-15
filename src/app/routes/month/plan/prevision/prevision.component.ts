@@ -13,8 +13,8 @@ import { JournalEntry } from "@routes/month/state/models/journal_entry.model";
 		</mat-card-title>
 		<form [formGroup]="form"
 					(submit)="submit(form.value)">
-			<mat-card-content fxLayout="row wrap">
-				<mat-radio-group formControlName="kind" fxFlex="50%">
+			<mat-card-content fxLayout="row wrap" fxLayout.lt-md="column">
+				<mat-radio-group formControlName="kind" fxFlex="50%" fxFlex.lt-md="100%">
 					<mat-radio-button value="I">
 						+ Projected Income (Salary, extras)
 					</mat-radio-button>
@@ -22,7 +22,7 @@ import { JournalEntry } from "@routes/month/state/models/journal_entry.model";
 						- Regular Outgoing (Mortgage, energy, phone)
 					</mat-radio-button>
 				</mat-radio-group>
-				<mat-form-field fxFlex="50%">
+				<mat-form-field fxFlex="50%" fxFlex.lt-md="100%">
 					<input matInput
 								placeholder="Date"
 								formControlName="date"
@@ -31,13 +31,13 @@ import { JournalEntry } from "@routes/month/state/models/journal_entry.model";
 																[for]="datepicker"></mat-datepicker-toggle>
 					<mat-datepicker #datepicker></mat-datepicker>
 				</mat-form-field>
-				<mat-form-field fxFlex="50%">
+				<mat-form-field fxFlex="50%" fxFlex.lt-md="100%">
 					<input matInput
 								placeholder="Description"
 								type="text"
 								formControlName="description">
 				</mat-form-field>
-				<mat-form-field fxFlex="50%">
+				<mat-form-field fxFlex="50%" fxFlex.lt-md="100%">
 					<input matInput
 								type="number"
 								formControlName="amount">

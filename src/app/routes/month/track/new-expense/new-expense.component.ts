@@ -10,8 +10,8 @@ import { JournalEntry } from "@routes/month/state/models/journal_entry.model";
 		<ab-widget-header mode="h3" caption="Record a new Expense"></ab-widget-header>
   </mat-card-title>
   <form [formGroup]="form" (submit)="submit(form.value)">
-	<mat-card-content fxLayout="row wrap">
-	<mat-form-field fxFlex="50%">
+	<mat-card-content fxLayout="row wrap" fxLayout.lt-md="column">
+	<mat-form-field fxFlex="50%" fxFlex.lt-md="100%">
 		<mat-select formControlName="expenseCategory"
 								placeholder="Expense category">
 			<mat-option *ngFor="let expenseCategory of expenseCategories | objectKeys"
@@ -20,7 +20,7 @@ import { JournalEntry } from "@routes/month/state/models/journal_entry.model";
 			</mat-option>
 		</mat-select>
   </mat-form-field>
-	<mat-form-field fxFlex="50%">
+	<mat-form-field fxFlex="50%" fxFlex.lt-md="100%">
 		<input formControlName="date"
 					 matInput
 					 [matDatepicker]="picker"
@@ -29,13 +29,13 @@ import { JournalEntry } from "@routes/month/state/models/journal_entry.model";
 													 [for]="picker"></mat-datepicker-toggle>
 		<mat-datepicker #picker></mat-datepicker>
 	</mat-form-field>
-	<mat-form-field fxFlex="50%">
+	<mat-form-field fxFlex="50%" fxFlex.lt-md="100%">
 		<input matInput
 					 type="number"
 					 formControlName="amount"
 					 placeholder="Amount">
 	</mat-form-field>
-	<mat-form-field fxFlex="50%">
+	<mat-form-field fxFlex="50%" fxFlex.lt-md="100%">
 		<input matInput
 					 type="text"
 					 placeholder="Description"

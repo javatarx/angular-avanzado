@@ -29,12 +29,12 @@ import { Subscription } from "rxjs";
 						(setGoal)="setGoalForMonth($event)">
 					</ab-goal>
 				</section>
-        <section fxLayout="row" fxLayoutGap="10px">
-          <ab-incomes fxFlex="50%"
+        <section fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxLayoutGap.lt-md="0px">
+          <ab-incomes fxFlex="50%" fxFlex.lt-md="100%"
             [projectionsToList]="projectedIncomes"
             (deleteProjection)="deleteAnEntry($event)">
           </ab-incomes>
-          <ab-outgoings fxFlex="50%"
+          <ab-outgoings fxFlex="50%" fxFlex.lt-md="100%"
             [projectionsToList]="projectedOutgoings"
             (deleteProjection)="deleteAnEntry($event)">
           </ab-outgoings>
